@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Slider from '../components/Slider';
+import ProductList from '../components/ProductList';
+import CategoryList from '../components/CatergoryList';
 
 const Home = () => {
  
@@ -29,6 +31,8 @@ const Home = () => {
 
     <>
     <Slider/>
+    <ProductList/>
+    <CategoryList/>
     </>
        
   );
