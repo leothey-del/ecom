@@ -10,6 +10,8 @@ import Logout from '../pages/Logout';
 import Cart from '../pages/Cart';
 import List from '../pages/List';
 import NotFound from '../pages/NotFound';
+import ListPage from '../pages/ListPage';
+import SinglePage from '../components/SinglePage';
 
 const AppRoute = () => {
   return (
@@ -22,7 +24,8 @@ const AppRoute = () => {
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/cart" element={<Cart />} />
-      <Route path="/list" element={<List />} />
+      <Route path="/list" element={<ListPage />} />
+      <Route path="/product/:productId" element={<SinglePage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

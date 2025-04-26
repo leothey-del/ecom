@@ -1,0 +1,27 @@
+const express = require("express")
+const router = express.Router()
+const Category = require("../models/Category")
+
+// POST: Add multiple products
+router.post("/seed", async (req, res) => {
+  try {
+    await Category.deleteMany({}) // optional: clear existing data
+    const category = req.body
+    await Category.insertMany(category)
+    res.status(201).json({ message: "Category seeded!" })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// GET: Fetch all products
+router.get("/", async (req, res) => {
+  try {
+    const category = await Category.find()
+    res.json(category)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+module.exports = router

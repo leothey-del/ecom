@@ -6,35 +6,40 @@ import ProductList from '../components/ProductList';
 import CategoryList from '../components/CatergoryList';
 
 const Home = () => {
- 
-
-  const features = [
-    {
-      title: 'Feature One',
-      description: 'Discover powerful tools to enhance your productivity with ease.',
-      icon: '🚀',
-    },
-    {
-      title: 'Feature Two',
-      description: 'Seamless integration with your favorite platforms.',
-      icon: '🔗',
-    },
-    {
-      title: 'Feature Three',
-      description: 'Secure and reliable performance for all your needs.',
-      icon: '🔒',
-    },
-  ];
-
   return (
- 
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      {/* Slider Section */}
+      <div className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Slider />
+        </div>
+      </div>
 
-    <>
-    <Slider/>
-    <ProductList/>
-    <CategoryList/>
-    </>
-       
+      {/* First Product List Section */}
+      <div className="py-12 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ProductList />
+        </div>
+      </div>
+
+      {/* Category List Section */}
+      <div className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CategoryList />
+        </div>
+      </div>
+
+      {/* Second Product List Section */}
+      <div className="py-12 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ProductList />
+        </div>
+      </div>
+    </motion.main>
   );
 };
 
